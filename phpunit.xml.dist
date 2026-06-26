@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    colors="true"
+    stopOnFailure="false"
+    testdox="true"
+>
+    <testsuites>
+        <testsuite name="wise-notification">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>src/commands</directory>
+            <directory>src/facades</directory>
+        </exclude>
+    </coverage>
+
+    <php>
+        <const name="PHPUNIT_WISE_NOTIFICATION_TEST" value="true"/>
+    </php>
+</phpunit>
