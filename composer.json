@@ -1,6 +1,7 @@
 {
     "name": "wiseadmin/wise-notification",
-    "description": "ThinkPHP 8 多通道消息通知组件，支持邮件、短信、钉钉、站内信等通道，提供模板、中间件、事件驱动能力。",
+    "description": "WiseAdmin 多通道消息通知组件 — 支持邮件、短信、钉钉、站内信等通道，提供模板引擎、中间件与事件驱动能力",
+    "homepage": "https://github.com/hiwiseadmin/wise-notification",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -13,7 +14,7 @@
     ],
     "authors": [
         {
-            "name": "wiseadmin",
+            "name": "WiseAdmin Team",
             "email": "wiseadmin@126.com"
         }
     ],
@@ -26,6 +27,9 @@
         "guzzlehttp/guzzle": "^7.0",
         "ext-json": "*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
     "suggest": {
         "phpmailer/phpmailer": "^6.9",
         "alibabacloud/dysmsapi": "^2.0",
@@ -36,6 +40,13 @@
             "wise\\notification\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "wise\\notification\\tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "extra": {
         "think": {
             "services": [
@@ -47,14 +58,17 @@
             "migrate-path": "database/migrations"
         }
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9.5"
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "wise\\notification\\tests\\": "tests/"
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/docs",
+            "/.github",
+            "/phpunit.xml",
+            "/.gitattributes",
+            "/.gitignore",
+            "/*.md",
+            "!/README.md",
+            "/qa/"
+        ]
+    }
 }
